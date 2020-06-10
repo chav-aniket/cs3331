@@ -1,0 +1,1 @@
+xterm -hold -title "Peer 15" -e "python3 main.py join 15 4 10" &

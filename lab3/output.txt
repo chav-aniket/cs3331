@@ -1,0 +1,394 @@
+CS3331 LAB3 OUTPUT
+
+EXERCISE 3
+
+1. 
+z5265106@weill ~/D/c/lab3> dig www.cecs.anu.edu.au
+
+; <<>> DiG 9.9.5-9+deb8u18-Debian <<>> www.cecs.anu.edu.au
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 6327
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 3, ADDITIONAL: 4   
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;www.cecs.anu.edu.au.           IN      A
+
+;; ANSWER SECTION:
+www.cecs.anu.edu.au.    2893    IN      CNAME   rproxy.cecs.anu.edu.au.
+rproxy.cecs.anu.edu.au. 2893    IN      A       150.203.161.98
+
+;; AUTHORITY SECTION:
+cecs.anu.edu.au.        94      IN      NS      ns2.cecs.anu.edu.au.   
+cecs.anu.edu.au.        94      IN      NS      ns4.cecs.anu.edu.au.   
+cecs.anu.edu.au.        94      IN      NS      ns3.cecs.anu.edu.au.   
+
+;; ADDITIONAL SECTION:
+ns2.cecs.anu.edu.au.    2257    IN      A       150.203.161.36
+ns3.cecs.anu.edu.au.    2227    IN      A       150.203.161.50
+ns4.cecs.anu.edu.au.    2258    IN      A       150.203.161.38
+
+;; Query time: 0 msec
+;; SERVER: 129.94.242.2#53(129.94.242.2)
+;; WHEN: Mon Mar 16 02:46:35 AEDT 2020
+;; MSG SIZE  rcvd: 187
+
+2.
+reference (1)
+
+3.
+reference (1)
+
+4.
+reference (1)
+
+5.
+z5265106@wagner ~/D/c/lab3> dig cecs.anu.edu.au ns
+
+; <<>> DiG 9.9.5-9+deb8u18-Debian <<>> cecs.anu.edu.au ns
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 22374
+;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 7  
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;cecs.anu.edu.au.               IN      NS
+
+;; ANSWER SECTION:
+cecs.anu.edu.au.        300     IN      NS      ns2.cecs.anu.edu.au.  
+cecs.anu.edu.au.        300     IN      NS      ns4.cecs.anu.edu.au.  
+cecs.anu.edu.au.        300     IN      NS      ns3.cecs.anu.edu.au.  
+
+;; ADDITIONAL SECTION:
+ns2.cecs.anu.edu.au.    1414    IN      A       150.203.161.36        
+ns2.cecs.anu.edu.au.    471     IN      AAAA    2001:388:1034:2905::24
+ns3.cecs.anu.edu.au.    300     IN      A       150.203.161.50        
+ns3.cecs.anu.edu.au.    471     IN      AAAA    2001:388:1034:2905::32
+ns4.cecs.anu.edu.au.    300     IN      A       150.203.161.38        
+ns4.cecs.anu.edu.au.    471     IN      AAAA    2001:388:1034:2905::26
+
+;; Query time: 23 msec
+;; SERVER: 129.94.242.2#53(129.94.242.2)
+;; WHEN: Sun Mar 15 00:05:08 AEDT 2020
+;; MSG SIZE  rcvd: 230
+
+6.
+z5265106@wagner ~/D/c/lab3> nslookup 111.68.101.54
+Server:         129.94.242.2
+Address:        129.94.242.2#53
+
+Non-authoritative answer:
+54.101.68.111.in-addr.arpa      name = webserver.seecs.nust.edu.pk.
+
+Authoritative answers can be found from:
+101.68.111.in-addr.arpa nameserver = ns1.hec.gov.pk.
+101.68.111.in-addr.arpa nameserver = ns2.hec.gov.pk.
+ns1.hec.gov.pk  internet address = 103.4.93.5
+ns2.hec.gov.pk  internet address = 103.4.93.6
+
+7.
+z5265106@wagner ~/D/c/lab3> dig @129.94.242.33 yahoo.com mx
+
+; <<>> DiG 9.9.5-9+deb8u18-Debian <<>> @129.94.242.33 yahoo.com mx      
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 40726
+;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 5, ADDITIONAL: 10   
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;yahoo.com.                     IN      MX
+
+;; ANSWER SECTION:
+yahoo.com.              1800    IN      MX      1 mta6.am0.yahoodns.net.
+yahoo.com.              1800    IN      MX      1 mta7.am0.yahoodns.net.
+yahoo.com.              1800    IN      MX      1 mta5.am0.yahoodns.net.
+
+;; AUTHORITY SECTION:
+yahoo.com.              17110   IN      NS      ns1.yahoo.com.
+yahoo.com.              17110   IN      NS      ns4.yahoo.com.
+yahoo.com.              17110   IN      NS      ns2.yahoo.com.
+yahoo.com.              17110   IN      NS      ns5.yahoo.com.
+yahoo.com.              17110   IN      NS      ns3.yahoo.com.
+
+;; ADDITIONAL SECTION:
+ns1.yahoo.com.          336541  IN      A       68.180.131.16
+ns1.yahoo.com.          4546    IN      AAAA    2001:4998:130::1001     
+ns2.yahoo.com.          292343  IN      A       68.142.255.16
+ns2.yahoo.com.          4546    IN      AAAA    2001:4998:140::1002     
+ns3.yahoo.com.          1142    IN      A       27.123.42.42
+ns3.yahoo.com.          1142    IN      AAAA    2406:8600:f03f:1f8::1003
+ns4.yahoo.com.          437888  IN      A       98.138.11.157
+ns5.yahoo.com.          3756    IN      A       202.165.97.53
+ns5.yahoo.com.          17346   IN      AAAA    2406:2000:ff60::53      
+
+;; Query time: 156 msec
+;; SERVER: 129.94.242.33#53(129.94.242.33)
+;; WHEN: Sat Mar 14 13:36:57 AEDT 2020
+;; MSG SIZE  rcvd: 399
+
+8.
+z5265106@weill ~/D/c/lab3> dig @ns3.cecs.anu.edu.au yahoo.com mx
+
+; <<>> DiG 9.9.5-9+deb8u18-Debian <<>> @ns3.cecs.anu.edu.au yahoo.com mx
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: REFUSED, id: 52957        
+;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;yahoo.com.                     IN      MX
+
+;; Query time: 8 msec
+;; SERVER: 150.203.161.50#53(150.203.161.50)
+;; WHEN: Mon Mar 16 04:53:59 AEDT 2020
+;; MSG SIZE  rcvd: 38
+
+9.
+z5265106@weill ~/D/c/lab3> dig @ns1.yahoo.com yahoo.com mx   
+
+; <<>> DiG 9.9.5-9+deb8u18-Debian <<>> @ns1.yahoo.com yahoo.com mx
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 23293
+;; flags: qr aa rd; QUERY: 1, ANSWER: 3, AUTHORITY: 5, ADDITIONAL: 10       
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1272
+;; QUESTION SECTION:
+;yahoo.com.                     IN      MX
+
+;; ANSWER SECTION:
+yahoo.com.              1800    IN      MX      1 mta7.am0.yahoodns.net.    
+yahoo.com.              1800    IN      MX      1 mta5.am0.yahoodns.net.    
+yahoo.com.              1800    IN      MX      1 mta6.am0.yahoodns.net.    
+
+;; AUTHORITY SECTION:
+yahoo.com.              172800  IN      NS      ns2.yahoo.com.
+yahoo.com.              172800  IN      NS      ns4.yahoo.com.
+yahoo.com.              172800  IN      NS      ns5.yahoo.com.
+yahoo.com.              172800  IN      NS      ns1.yahoo.com.
+yahoo.com.              172800  IN      NS      ns3.yahoo.com.
+
+;; ADDITIONAL SECTION:
+ns1.yahoo.com.          1209600 IN      A       68.180.131.16
+ns2.yahoo.com.          1209600 IN      A       68.142.255.16
+ns3.yahoo.com.          1800    IN      A       27.123.42.42
+ns4.yahoo.com.          1209600 IN      A       98.138.11.157
+ns5.yahoo.com.          86400   IN      A       202.165.97.53
+ns1.yahoo.com.          86400   IN      AAAA    2001:4998:130::1001
+ns2.yahoo.com.          86400   IN      AAAA    2001:4998:140::1002
+ns3.yahoo.com.          1800    IN      AAAA    2406:8600:f03f:1f8::1003    
+ns5.yahoo.com.          86400   IN      AAAA    2406:2000:ff60::53
+
+;; Query time: 146 msec
+;; SERVER: 68.180.131.16#53(68.180.131.16)
+;; WHEN: Mon Mar 16 01:49:15 AEDT 2020
+;; MSG SIZE  rcvd: 399
+
+10.
+z5265106@weill ~/D/c/lab3> dig . NS +short                                  
+b.root-servers.net.
+e.root-servers.net.
+g.root-servers.net.
+f.root-servers.net.
+i.root-servers.net.
+j.root-servers.net.
+m.root-servers.net.
+a.root-servers.net.
+l.root-servers.net.
+d.root-servers.net.
+c.root-servers.net.
+h.root-servers.net.
+k.root-servers.net.
+____________________________________________________
+z5265106@weill ~/D/c/lab3> dig @c.root-servers.net lyre00.cse.unsw.edu.au NS  
+
+; <<>> DiG 9.9.5-9+deb8u18-Debian <<>> @c.root-servers.net lyre00.cse.unsw.edu.au NS
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 27678
+;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 9, ADDITIONAL: 19
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;lyre00.cse.unsw.edu.au.                IN      NS
+
+;; AUTHORITY SECTION:
+au.                     172800  IN      NS      a.au.
+au.                     172800  IN      NS      q.au.
+au.                     172800  IN      NS      d.au.
+au.                     172800  IN      NS      s.au.
+au.                     172800  IN      NS      m.au.
+au.                     172800  IN      NS      c.au.
+au.                     172800  IN      NS      t.au.
+au.                     172800  IN      NS      r.au.
+au.                     172800  IN      NS      n.au.
+
+;; ADDITIONAL SECTION:
+a.au.                   172800  IN      A       58.65.254.73
+c.au.                   172800  IN      A       162.159.24.179
+d.au.                   172800  IN      A       162.159.25.38
+m.au.                   172800  IN      A       156.154.100.24
+n.au.                   172800  IN      A       156.154.101.24
+q.au.                   172800  IN      A       65.22.196.1
+r.au.                   172800  IN      A       65.22.197.1
+s.au.                   172800  IN      A       65.22.198.1
+t.au.                   172800  IN      A       65.22.199.1
+a.au.                   172800  IN      AAAA    2407:6e00:254:306::73      
+c.au.                   172800  IN      AAAA    2400:cb00:2049:1::a29f:18b3
+d.au.                   172800  IN      AAAA    2400:cb00:2049:1::a29f:1926
+m.au.                   172800  IN      AAAA    2001:502:2eda::24
+n.au.                   172800  IN      AAAA    2001:502:ad09::24
+q.au.                   172800  IN      AAAA    2a01:8840:be::1
+r.au.                   172800  IN      AAAA    2a01:8840:bf::1
+s.au.                   172800  IN      AAAA    2a01:8840:c0::1
+t.au.                   172800  IN      AAAA    2a01:8840:c1::1
+
+;; Query time: 164 msec
+;; SERVER: 192.33.4.12#53(192.33.4.12)
+;; WHEN: Mon Mar 16 05:22:03 AEDT 2020
+;; MSG SIZE  rcvd: 591
+____________________________________________________
+z5265106@weill ~/D/c/lab3> dig @a.au. lyre00.cse.unsw.edu.au NS
+
+; <<>> DiG 9.9.5-9+deb8u18-Debian <<>> @a.au. lyre00.cse.unsw.edu.au NS
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 12345
+;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 4, ADDITIONAL: 9
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;lyre00.cse.unsw.edu.au.                IN      NS
+
+;; AUTHORITY SECTION:
+edu.au.                 86400   IN      NS      q.au.
+edu.au.                 86400   IN      NS      r.au.
+edu.au.                 86400   IN      NS      t.au.
+edu.au.                 86400   IN      NS      s.au.
+
+;; ADDITIONAL SECTION:
+q.au.                   86400   IN      A       65.22.196.1
+r.au.                   86400   IN      A       65.22.197.1
+s.au.                   86400   IN      A       65.22.198.1
+t.au.                   86400   IN      A       65.22.199.1
+q.au.                   86400   IN      AAAA    2a01:8840:be::1
+r.au.                   86400   IN      AAAA    2a01:8840:bf::1
+s.au.                   86400   IN      AAAA    2a01:8840:c0::1
+t.au.                   86400   IN      AAAA    2a01:8840:c1::1
+
+;; Query time: 16 msec
+;; SERVER: 58.65.254.73#53(58.65.254.73)
+;; WHEN: Mon Mar 16 05:23:27 AEDT 2020
+;; MSG SIZE  rcvd: 291
+____________________________________________________
+z5265106@weill ~/D/c/lab3> dig @s.au. lyre00.cse.unsw.edu.au NS
+
+; <<>> DiG 9.9.5-9+deb8u18-Debian <<>> @s.au. lyre00.cse.unsw.edu.au NS
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 49304
+;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 3, ADDITIONAL: 6
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;lyre00.cse.unsw.edu.au.                IN      NS
+
+;; AUTHORITY SECTION:
+unsw.edu.au.            900     IN      NS      ns3.unsw.edu.au.
+unsw.edu.au.            900     IN      NS      ns2.unsw.edu.au.
+unsw.edu.au.            900     IN      NS      ns1.unsw.edu.au.
+
+;; ADDITIONAL SECTION:
+ns1.unsw.edu.au.        900     IN      A       129.94.0.192
+ns2.unsw.edu.au.        900     IN      A       129.94.0.193
+ns3.unsw.edu.au.        900     IN      A       192.155.82.178
+ns1.unsw.edu.au.        900     IN      AAAA    2001:388:c:35::1
+ns2.unsw.edu.au.        900     IN      AAAA    2001:388:c:35::2
+
+;; Query time: 17 msec
+;; SERVER: 65.22.198.1#53(65.22.198.1)
+;; WHEN: Mon Mar 16 05:23:46 AEDT 2020
+;; MSG SIZE  rcvd: 209
+____________________________________________________
+z5265106@weill ~/D/c/lab3> dig @ns3.unsw.edu.au. lyre00.cse.unsw.edu.au NS
+
+; <<>> DiG 9.9.5-9+deb8u18-Debian <<>> @ns3.unsw.edu.au. lyre00.cse.unsw.edu.au NS
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 55662
+;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 5
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;lyre00.cse.unsw.edu.au.                IN      NS
+
+;; AUTHORITY SECTION:
+cse.unsw.edu.au.        10800   IN      NS      beethoven.orchestra.cse.unsw.edu.au.
+cse.unsw.edu.au.        10800   IN      NS      maestro.orchestra.cse.unsw.edu.au.
+
+;; ADDITIONAL SECTION:
+beethoven.orchestra.cse.unsw.edu.au. 10800 IN A 129.94.208.3
+beethoven.orchestra.cse.unsw.edu.au. 10800 IN A 129.94.242.2
+beethoven.orchestra.cse.unsw.edu.au. 10800 IN A 129.94.172.11
+maestro.orchestra.cse.unsw.edu.au. 10800 IN A   129.94.242.33
+
+;; Query time: 158 msec
+;; SERVER: 192.155.82.178#53(192.155.82.178)
+;; WHEN: Mon Mar 16 05:24:18 AEDT 2020
+;; MSG SIZE  rcvd: 171
+____________________________________________________
+z5265106@weill ~/D/c/lab3> dig @beethoven.orchestra.cse.unsw.edu.au. lyre00.cse.unsw.edu.au  
+
+; <<>> DiG 9.9.5-9+deb8u18-Debian <<>> @beethoven.orchestra.cse.unsw.edu.au. lyre00.cse.unsw.edu.au
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 13707
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 3       
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;lyre00.cse.unsw.edu.au.                IN      A
+
+;; ANSWER SECTION:
+lyre00.cse.unsw.edu.au. 3600    IN      A       129.94.210.20
+
+;; AUTHORITY SECTION:
+cse.unsw.edu.au.        3600    IN      NS      maestro.orchestra.cse.unsw.edu.au.
+cse.unsw.edu.au.        3600    IN      NS      beethoven.orchestra.cse.unsw.edu.au.
+
+;; ADDITIONAL SECTION:
+maestro.orchestra.cse.unsw.edu.au. 3600 IN A    129.94.242.33
+beethoven.orchestra.cse.unsw.edu.au. 3600 IN A  129.94.242.2
+
+;; Query time: 0 msec
+;; SERVER: 129.94.242.2#53(129.94.242.2)
+;; WHEN: Mon Mar 16 05:25:18 AEDT 2020
+;; MSG SIZE  rcvd: 155
